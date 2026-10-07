@@ -15,13 +15,13 @@ export default function CurrentlyLearning() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {currentlyLearningData.map((item) => (
-            <div
+            <article
               key={item.id}
               className="bg-zinc-900/40 border border-zinc-800/90 hover:border-blue-500/40 hover:bg-zinc-900/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 group hover:-translate-y-1 backdrop-blur-sm"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-sky-400 group-hover:scale-105 transition-transform shadow-inner">
+                  <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-sky-400 group-hover:scale-105 transition-transform shadow-inner" aria-hidden="true">
                     <BookOpen className="w-4 h-4" />
                   </div>
                   <span className="bg-zinc-950/80 text-sky-300 border border-zinc-800 text-xs font-mono font-semibold px-2.5 py-1 rounded-lg">
@@ -38,7 +38,7 @@ export default function CurrentlyLearning() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-zinc-800/80 flex flex-wrap gap-1.5">
+              <div className="pt-4 border-t border-zinc-800/80 flex flex-wrap gap-1.5" aria-label="Topic tags">
                 {item.tags.map((tag, idx) => (
                   <span
                     key={idx}
@@ -48,7 +48,7 @@ export default function CurrentlyLearning() {
                   </span>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

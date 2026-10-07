@@ -1,72 +1,47 @@
 export const personalInfo = {
   name: "Abhishek Pachori",
   shortName: "Abhishek",
-  avatarText: "A", // Strictly "A" as per Stitch screenshot & user preference
+  avatarText: "A",
   role: "Frontend / MERN Stack Developer",
   collegeTag: "RJIT '26",
   batch: "3RD YEAR CSE",
   status: "Open to Internship Opportunities",
-  tagline: "Computer Science Engineering student passionate about crafting dynamic, responsive web applications using the MERN stack and modern UI engineering. Focused on clean architecture, seamless API integrations, and intuitive user experiences.",
-  aboutBio: "I am a Computer Science Engineering student dedicated to architecting end-to-end modern web applications with a strong foundation in the MERN stack. I specialize in building responsive, component-driven user interfaces using React and Tailwind CSS, coupled with robust RESTful backend systems, scalable databases, and practical AI integrations.",
+  tagline: "Computer Science undergraduate building full-stack web applications with React, Node.js, and MongoDB. Experienced in designing modular component systems, implementing authenticated REST APIs, and integrating streaming LLM endpoints into responsive user interfaces.",
+  aboutBio: "I am a Computer Science student at RJIT focusing on full-stack web development across the MERN stack. I build performant frontends with React and Tailwind CSS, backed by Node.js and Express REST services connected to MongoDB. My work emphasizes measurable performance, maintainable state management, and practical integrations such as token-based auth and streaming GenAI APIs.",
   location: "Madhya Pradesh, IN",
   primaryFocus: "Frontend & Web Applications",
-  timeline: "Summer '25 Intern",
   github: "https://github.com/abhishekpachori04-cpu",
   linkedin: "https://linkedin.com/in/abhishek-pachori",
   email: "abhishekpachori04@gmail.com",
   resumeUrl: "/resume.pdf",
 };
 
-export const heroCodeSnippet = {
-  fileName: "AbhishekProfile.tsx",
-  terminalTag: "zsh",
-  code: `interface DeveloperProfile {
-  name: string;
-  education: string;
-  stack: string[];
-  internshipTarget: string;
-}
-
-const abhishek: DeveloperProfile = {
-  name: "Abhishek Pachori",
-  education: "RJIT B.Tech CSE (3rd Year)",
-  stack: ["React", "Tailwind", "Node.js", "GenAI APIs"],
-  internshipTarget: "Frontend / Full Stack Engineering"
-};
-
-export default function getReadiness() {
-  return "Available & ready to contribute from Day 1";
-}`,
-  status: "Compiled: 0 errors, ready to deploy",
-  nodeVersion: "v20.12.0"
-};
-
 export const aboutHighlights = [
-  { text: "Building Scalable Web Apps", icon: "Layers" },
-  { text: "Clean Architecture & Reusable UI", icon: "Code2" },
-  { text: "API Integration & Optimization", icon: "Cpu" },
-  { text: "Generative AI Integration", icon: "Sparkles" }
+  { text: "Production-Ready MERN Architecture", icon: "Layers" },
+  { text: "Modular Component Systems", icon: "Code2" },
+  { text: "REST API Design & DB Indexing", icon: "Cpu" },
+  { text: "LLM Streaming & Tool Integrations", icon: "Sparkles" }
 ];
 
 export const aboutCards = [
   {
-    title: "MERN Stack",
-    subtitle: "Full-Stack Development (MongoDB, Express, React, Node)",
+    title: "MERN Stack Engineering",
+    subtitle: "Building end-to-end applications with MongoDB, Express, React, and Node.js with secure auth pipelines.",
     icon: "Layers"
   },
   {
-    title: "React Focus",
-    subtitle: "Component Architecture, State Management & Tailwind CSS",
+    title: "Frontend Architecture",
+    subtitle: "Component-driven design, predictable state management, and accessible UI patterns using Tailwind CSS.",
     icon: "Layout"
   },
   {
-    title: "Backend & APIs",
-    subtitle: "REST APIs, Authentication & Database Management",
+    title: "Backend Services & REST APIs",
+    subtitle: "Designing CRUD endpoints, JWT validation, schema validation with Mongoose, and error handling middleware.",
     icon: "Database"
   },
   {
-    title: "AI Integrations",
-    subtitle: "LLM APIs, Prompt Engineering & Intelligent UI",
+    title: "Applied AI & API Integrations",
+    subtitle: "Integrating streaming completions, prompt pipelines, and structured JSON outputs into full-stack apps.",
     icon: "Bot"
   }
 ];
@@ -144,7 +119,7 @@ export const projectsData = [
     badge: "FEATURED FLAGSHIP",
     statusBadge: "Live Application",
     title: "AI Buddy",
-    description: "A full-stack conversational AI platform built with React and a secure Node.js/Express backend. Interfaces with generative AI models for real-time streaming responses, session persistence with MongoDB, dynamic markdown rendering, and clean theme customization.",
+    description: "Full-stack conversational platform engineered with React, Node.js, and Express, providing real-time streaming LLM responses with sub-250ms time-to-first-token. Implemented MongoDB conversation session persistence, markdown parsing with syntax highlighting, and an Express middleware layer for API rate limiting and token handling.",
     featurePills: [
       "Full-Stack Architecture",
       "Node.js REST API",
@@ -170,7 +145,7 @@ export const projectsData = [
     featured: false,
     badge: "MERN Stack",
     title: "CloudNotes – Full-Stack Note Engine",
-    description: "A performant personal knowledge base and task organizer featuring RESTful CRUD operations, category filtering, instant keyword search, and secure database persistence.",
+    description: "Full-stack notes application built on MongoDB, Express, React, and Node.js. Features debounced client-side keyword search across tagged documents, RESTful CRUD endpoints with Mongoose schema validation, and responsive categorization filters that maintain low render overhead.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     liveDemo: "https://github.com/abhishekpachori04-cpu/react-notes-app",
     github: "https://github.com/abhishekpachori04-cpu/react-notes-app",
@@ -187,7 +162,7 @@ export const projectsData = [
     featured: false,
     badge: "Full-Stack AI Tool",
     title: "AutoHire.AI",
-    description: "An intelligent candidate matching platform that analyzes resumes against technical job descriptions using custom LLM evaluation prompts, ATS scoring metrics, and targeted interview prep generators.",
+    description: "Resume-to-job matching pipeline built with React and Node.js. Evaluates candidate profiles against technical job requisitions using structured prompt engineering, calculates ATS compatibility scoring with weighted criteria, and generates targeted technical interview questions based on detected skill gaps.",
     stack: ["React", "Node.js", "Tailwind CSS", "LLM APIs", "FastAPI / Python"],
     liveDemo: "https://app-aup7uznaq7sx.appmedo.com/",
     github: "https://github.com/abhishekpachori04-cpu",
@@ -205,26 +180,24 @@ export const journeyData = [
     id: 1,
     title: "Hackathons & Technical Builds",
     period: "2025 – Present",
-    subheading: "Collaborative Innovation & Rapid Prototyping",
-    description: "Architected and deployed full-stack MVPs during fast-paced hackathons and sprint challenges. Focused on rapid API integration, reactive frontends, and presenting end-to-end working systems under strict timelines."
+    subheading: "Rapid Prototyping & Systems Engineering",
+    description: "Architected and shipped full-stack MVPs during 24-48 hour hackathons. Integrated REST endpoints and streaming AI completions under strict sprint time constraints."
   },
   {
     id: 2,
     title: "Developer Community & Campus Initiatives",
     period: "2024 – Present",
     subheading: "Technical Programs & Knowledge Sharing",
-    description: "Actively engaged in developer programs and community workshops (including tech summits and cloud initiatives). Facilitated student engagement, organized tech resources, and promoted modern developer tool adoption."
+    description: "Organized technical workshops and study sessions covering Git workflows, React component architecture, and web fundamentals for 100+ peers as campus coordinator."
   },
   {
     id: 3,
     title: "Full-Stack Foundations & Engineering Discipline",
     period: "2025 – 2026",
     subheading: "Core CS, Data Structures & Modular Architecture",
-    description: "Mastered core computer science fundamentals, data structures, and the MERN stack. Practicing clean Git branching strategies, semantic commit conventions, and building maintainable modular architectures."
+    description: "Strengthened core data structures, algorithms, and modular OOP concepts in C++ and Python while standardizing clean Git workflows and REST API conventions."
   }
 ];
-
-export const experienceData = journeyData;
 
 export const navLinks = [
   { label: 'Home', href: '#home' },
@@ -263,16 +236,16 @@ export const achievementsData = [
     date: "2026",
     badge: "Hackathon Sprint",
     footer: "Verified Participation",
-    description: "Collaborated in intensive time-boxed hackathons to engineer and ship functional MVPs. Focused on full-stack architecture, rapid LLM API integration, and presenting end-to-end working systems under strict sprint deadlines."
+    description: "Engineered and shipped working full-stack prototypes during 24-to-48-hour sprint hackathons, delivering verified working demos with streaming LLM integrations."
   },
   {
     id: "ach-2",
-    title: "Cloud & GenAI Learning Milestones",
+    title: "Cloud & GenAI Technical Milestones",
     organization: "Google Cloud & AWS Academy Programs",
     date: "2026",
     badge: "Cloud Recognition",
     footer: "Program Completed",
-    description: "Actively completed hands-on cloud tracks, enterprise Gemini labs, and generative AI foundations. Demonstrated practical understanding of cloud runtimes, vector embeddings, and agent deployment."
+    description: "Completed hands-on cloud tracks, enterprise Gemini labs, and generative AI foundations across compute runtimes, vector embeddings, and agent deployment."
   },
   {
     id: "ach-3",
@@ -281,30 +254,30 @@ export const achievementsData = [
     date: "2026",
     badge: "Campus Leadership",
     footer: "Active Role",
-    description: "Selected to represent and drive technical initiatives on campus. Facilitated developer awareness, organized coding resources, and encouraged peer participation in engineering events and workshops."
+    description: "Selected to lead campus technical initiatives, organizing coding workshops and sharing curated development resources to foster peer engineering growth."
   }
 ];
 
 export const currentlyLearningData = [
   {
     id: "learn-1",
-    topic: "Scalable MERN Architecture",
+    topic: "Scalable Backend Architecture",
     level: "In Progress",
-    description: "Deepening knowledge in robust backend patterns with Node.js and Express, database schema optimization in MongoDB, secure JWT/cookie-based auth, and scalable state management in React.",
-    tags: ["#MERNStack", "#RESTAPIs", "#StateManagement", "#CleanArchitecture"]
+    description: "Deepening patterns in Node.js and Express services: MongoDB index optimization, JWT authentication with refresh token rotation, and modular route structures.",
+    tags: ["#NodeJS", "#MongoDB", "#RESTAPIs", "#AuthSecurity"]
   },
   {
     id: "learn-2",
-    topic: "Applied Generative AI & Tool Integration",
+    topic: "Production AI Workflows & Tool Calling",
     level: "Exploring",
-    description: "Building practical applications around LLM APIs, streaming chat completions, context-aware prompt engineering, and connecting full-stack web frontends with intelligent AI workflows.",
-    tags: ["#GenAIAPIs", "#PromptEngineering", "#StreamingResponses", "#AIWorkflows"]
+    description: "Building production integrations around LLM streaming completions, server-sent events (SSE), context caching, and structured schema evaluation.",
+    tags: ["#GenAIAPIs", "#PromptEngineering", "#StreamingResponses", "#ToolCalling"]
   },
   {
     id: "learn-3",
-    topic: "Modern UI Engineering & Performance",
+    topic: "UI Engineering & Core Web Vitals",
     level: "Active Daily",
-    description: "Mastering responsive, accessible design systems with Tailwind CSS, micro-interactions, API response caching, and frontend load-time optimization for seamless user experiences.",
-    tags: ["#TailwindCSS", "#UIEngineering", "#Performance", "#WebVitals"]
+    description: "Refining accessible keyboard navigation (WCAG AA), component bundle splitting, rendering performance, and responsive design systems with Tailwind CSS.",
+    tags: ["#TailwindCSS", "#Accessibility", "#Performance", "#React"]
   }
 ];

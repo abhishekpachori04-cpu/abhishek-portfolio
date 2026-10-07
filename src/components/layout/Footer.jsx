@@ -21,7 +21,7 @@ export default function Footer() {
                 {personalInfo.name}
               </p>
               <p className="text-[11px] text-slate-500 font-mono">
-                {personalInfo.role} • {personalInfo.collegeTag}
+                {personalInfo.role} &bull; {personalInfo.collegeTag}
               </p>
             </div>
           </div>
@@ -31,9 +31,9 @@ export default function Footer() {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
-              title="GitHub"
-              aria-label="GitHub Profile"
+              className="text-slate-400 hover:text-white transition-colors p-1.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              title="GitHub Profile"
+              aria-label="Visit Abhishek Pachori's GitHub profile (opens in new tab)"
             >
               <GithubIcon className="w-4 h-4" />
             </a>
@@ -41,17 +41,17 @@ export default function Footer() {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
-              title="LinkedIn"
-              aria-label="LinkedIn Profile"
+              className="text-slate-400 hover:text-white transition-colors p-1.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              title="LinkedIn Profile"
+              aria-label="Visit Abhishek Pachori's LinkedIn profile (opens in new tab)"
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-slate-400 hover:text-white transition-colors"
-              title="Email"
-              aria-label="Send direct email"
+              className="text-slate-400 hover:text-white transition-colors p-1.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              title="Send direct email"
+              aria-label="Send direct email to Abhishek Pachori"
             >
               <Mail className="w-4 h-4" />
             </a>
@@ -59,13 +59,13 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <span className="text-[11px] text-slate-500 font-mono">
-              © {new Date().getFullYear()} Abhishek Pachori
+              &copy; {new Date().getFullYear()} Abhishek Pachori
             </span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-[#101726] border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-colors"
+              className="p-2 rounded-lg bg-[#101726] border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               title="Back to Top"
-              aria-label="Scroll back to top"
+              aria-label="Scroll back to top of page"
             >
               <ArrowUp className="w-4 h-4" />
             </button>

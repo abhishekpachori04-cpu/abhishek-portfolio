@@ -1,9 +1,5 @@
 import React from 'react';
 
-/**
- * Reusable clean typography wrapper for section headings.
- * Standardizes title typography, pulsing status dot, and descriptive subtext across all sections.
- */
 export default function SectionHeader({
   title,
   subtitle,
@@ -33,7 +29,7 @@ export default function SectionHeader({
 
         <h2 className={`text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3 ${isCenter ? 'justify-center' : ''}`}>
           <span>{title}</span>
-          <span className="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-md shadow-sky-400/80 animate-pulse" />
+          <span className="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-md shadow-sky-400/80 animate-pulse" aria-hidden="true" />
         </h2>
 
         {subtitle && (

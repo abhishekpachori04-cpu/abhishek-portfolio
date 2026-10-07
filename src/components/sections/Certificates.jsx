@@ -24,17 +24,17 @@ export default function Certificates() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => scroll('left')}
-                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
-                title="Scroll Left"
-                aria-label="Previous certificates"
+                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                title="Previous certificates"
+                aria-label="Scroll certificates left"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scroll('right')}
-                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
-                title="Scroll Right"
-                aria-label="Next certificates"
+                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                title="Next certificates"
+                aria-label="Scroll certificates right"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -44,9 +44,10 @@ export default function Certificates() {
 
         <div
           ref={sliderRef}
-          className="flex gap-5 overflow-x-auto pb-6 pt-1 scroll-smooth snap-x snap-mandatory scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent focus:outline-none"
+          role="region"
+          aria-label="Certificates and credentials list"
           tabIndex={0}
-          aria-label="Certificates Track"
+          className="flex gap-5 overflow-x-auto pb-6 pt-1 scroll-smooth snap-x snap-mandatory scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-xl"
         >
           {certificatesData.map((cert) => (
             <CertificateCard key={cert.id} cert={cert} />

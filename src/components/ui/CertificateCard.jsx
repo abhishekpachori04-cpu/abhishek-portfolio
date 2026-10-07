@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { ExternalLink, ShieldCheck, Award } from 'lucide-react';
 
-/**
- * Modular CertificateCard component rendering credentials and certifications.
- */
 export default function CertificateCard({ cert }) {
   const [imgError, setImgError] = useState(false);
 
   if (!cert) return null;
 
   return (
-    <div className="w-[320px] md:w-[350px] flex-shrink-0 snap-start bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 group backdrop-blur-sm select-none">
+    <article className="w-[320px] md:w-[350px] shrink-0 snap-start bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 group backdrop-blur-sm select-none">
       <div>
         <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-zinc-800/50 border border-zinc-700/40 mb-4 flex items-center justify-center p-3 shadow-inner">
           {imgError || !cert.image ? (
@@ -28,7 +25,7 @@ export default function CertificateCard({ cert }) {
           ) : (
             <img
               src={cert.image}
-              alt={cert.title}
+              alt={`${cert.title} - Certificate issued by ${cert.issuer}`}
               onError={() => setImgError(true)}
               className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
@@ -54,7 +51,7 @@ export default function CertificateCard({ cert }) {
           {cert.credentialId ? `ID: ${cert.credentialId}` : 'ID: Verified Credential'}
         </p>
 
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-1.5 mb-4" aria-label="Skills covered">
           {cert.skills.map((skill, idx) => (
             <span
               key={idx}
@@ -71,13 +68,13 @@ export default function CertificateCard({ cert }) {
           href={cert.credentialUrl}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Verify credential for ${cert.title}`}
-          className="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors group/link"
+          aria-label={`Verify ${cert.title} credential from ${cert.issuer} (opens in new tab)`}
+          className="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors group/link rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
         >
           <span>Verify Credential</span>
           <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
         </a>
       </div>
-    </div>
+    </article>
   );
 }

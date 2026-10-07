@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-/**
- * Performance-optimized radial mouse spotlight and smooth follower ring.
- * Uses requestAnimationFrame and direct ref transforms to avoid React re-renders.
- */
 export default function CustomCursor() {
   const spotlightRef = useRef(null);
   const dotRef = useRef(null);
@@ -71,7 +67,7 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <>
+    <div aria-hidden="true">
       <div
         ref={spotlightRef}
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 opacity-0"
@@ -94,6 +90,6 @@ export default function CustomCursor() {
           willChange: 'transform, opacity',
         }}
       />
-    </>
+    </div>
   );
 }

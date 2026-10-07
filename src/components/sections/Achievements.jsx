@@ -15,7 +15,7 @@ export default function Achievements() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {achievementsData.map((ach) => (
-            <div
+            <article
               key={ach.id}
               className="bg-zinc-900/40 border border-zinc-800/90 hover:border-blue-500/40 hover:bg-zinc-900/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 group hover:-translate-y-1 backdrop-blur-sm"
             >
@@ -25,7 +25,7 @@ export default function Achievements() {
                     {ach.badge}
                   </span>
                   <span className="flex items-center gap-1.5 text-[11px] font-mono text-slate-400 bg-zinc-950/70 border border-zinc-800/90 px-2.5 py-1 rounded-md">
-                    <Calendar className="w-3 h-3 text-sky-400" />
+                    <Calendar className="w-3 h-3 text-sky-400" aria-hidden="true" />
                     <span>{ach.date}</span>
                   </span>
                 </div>
@@ -34,7 +34,7 @@ export default function Achievements() {
                   {ach.title}
                 </h3>
                 <p className="text-xs font-semibold text-slate-400 mb-3.5 flex items-center gap-1.5">
-                  <Trophy className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <Trophy className="w-3.5 h-3.5 text-amber-400 shrink-0" aria-hidden="true" />
                   <span className="truncate">{ach.organization}</span>
                 </p>
 
@@ -44,10 +44,10 @@ export default function Achievements() {
               </div>
 
               <div className="pt-4 mt-6 border-t border-zinc-800/80 flex items-center gap-1.5 text-[11px] font-mono text-slate-400 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                <Sparkles className="w-3.5 h-3.5 text-sky-400" aria-hidden="true" />
                 <span>{ach.footer || 'Verified Activity'}</span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

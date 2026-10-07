@@ -44,10 +44,17 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#080c14] text-slate-200 selection:bg-sky-500/20 selection:text-sky-200">
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        Skip to main content
+      </a>
+
       <CustomCursor />
       <Navbar onShareClick={() => setShareModalOpen(true)} />
 
-      <main className="relative">
+      <main id="main-content" className="relative">
         <Hero onShareClick={() => setShareModalOpen(true)} />
         <About />
         <Skills />

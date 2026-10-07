@@ -16,7 +16,7 @@ export default function Hero({ onShareClick }) {
           
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
               <span>{personalInfo.status}</span>
             </div>
 
@@ -29,7 +29,7 @@ export default function Hero({ onShareClick }) {
               </h1>
               <p className="text-slate-300 font-medium text-lg sm:text-xl flex items-center gap-2 pt-1">
                 <span>Frontend / MERN Stack Developer</span>
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-sky-400" />
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-sky-400" aria-hidden="true" />
                 <span className="text-slate-400 font-mono text-sm">{personalInfo.collegeTag}</span>
               </p>
             </div>
@@ -41,18 +41,19 @@ export default function Hero({ onShareClick }) {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#projects"
-                className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-[1.01] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 <span>View My Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href="/resume.pdf"
+                href={personalInfo.resumeUrl}
                 download="Abhishek_Pachori_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-sm px-4 py-2.5 rounded-xl flex items-center gap-2 hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
+                aria-label="Download Abhishek Pachori's Resume (PDF)"
+                className="bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-sm px-4 py-2.5 rounded-xl flex items-center gap-2 hover:scale-[1.01] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 <Download className="w-4 h-4 text-zinc-400" />
                 <span>Download Resume</span>
@@ -63,8 +64,8 @@ export default function Hero({ onShareClick }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="View GitHub Source"
-                aria-label="View GitHub profile"
-                className="bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700 p-2.5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+                aria-label="Visit Abhishek Pachori's GitHub profile (opens in new tab)"
+                className="bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700 p-2.5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 <Code className="w-4 h-4" />
               </a>
@@ -72,8 +73,8 @@ export default function Hero({ onShareClick }) {
               <button
                 onClick={onShareClick}
                 title="Share Portfolio"
-                aria-label="Share portfolio"
-                className="bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700 p-2.5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                aria-label="Open portfolio share dialog"
+                className="bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700 p-2.5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 <Share2 className="w-4 h-4" />
               </button>
@@ -110,7 +111,7 @@ export default function Hero({ onShareClick }) {
               <div className="relative rounded-3xl overflow-hidden ring-1 ring-zinc-700/60 bg-[#0d1322] shadow-2xl shadow-blue-500/10 aspect-[4/5]">
                 <img
                   src="/assets/profile.jpg"
-                  alt={personalInfo.name}
+                  alt="Abhishek Pachori - Developer Profile"
                   className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
                   loading="eager"
                 />
@@ -119,7 +120,7 @@ export default function Hero({ onShareClick }) {
                 
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-[#090e1a]/85 backdrop-blur-md border border-zinc-800/80 flex items-center justify-between shadow-lg">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
                     <span className="text-xs font-semibold text-white tracking-tight">
                       {personalInfo.name}
                     </span>

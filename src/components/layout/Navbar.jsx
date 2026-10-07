@@ -40,8 +40,8 @@ export default function Navbar({ onShareClick }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <a 
           href="#home" 
-          className="flex items-center gap-2.5 group focus:outline-none"
-          aria-label="Back to top"
+          className="flex items-center gap-2.5 group rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+          aria-label="Abhishek Pachori - Back to top"
         >
           <div className="w-8 h-8 rounded-lg bg-[#0e1626] border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-sm shadow-inner group-hover:border-sky-400 group-hover:scale-105 transition-all">
             {personalInfo.avatarText}
@@ -59,7 +59,7 @@ export default function Navbar({ onShareClick }) {
             <a
               key={link.label}
               href={link.href}
-              className="px-3 py-1 text-xs font-medium text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-full transition-colors"
+              className="px-3 py-1 text-xs font-medium text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
             >
               {link.label}
             </a>
@@ -72,8 +72,8 @@ export default function Navbar({ onShareClick }) {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub Profile"
-            aria-label="GitHub Profile"
-            className="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white flex items-center justify-center text-xs transition-colors"
+            aria-label="Abhishek Pachori's GitHub profile (opens in new tab)"
+            className="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white flex items-center justify-center text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
           >
             <Code className="w-3.5 h-3.5" />
           </a>
@@ -81,18 +81,19 @@ export default function Navbar({ onShareClick }) {
           <button
             onClick={handleCopyLink}
             title={hasCopied ? "Link Copied!" : "Share Portfolio"}
-            aria-label="Share portfolio link"
-            className="relative w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white flex items-center justify-center text-xs transition-colors"
+            aria-label={hasCopied ? "Portfolio link copied to clipboard" : "Share portfolio link"}
+            className="relative w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white flex items-center justify-center text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
           >
             {hasCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
           </button>
 
           <a
-            href="/resume.pdf"
+            href={personalInfo.resumeUrl}
             download="Abhishek_Pachori_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-sm shadow-blue-500/30 transition-colors"
+            aria-label="Download Abhishek Pachori's Resume (PDF)"
+            className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-sm shadow-blue-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
           >
             <Download className="w-3 h-3" />
             <span>Resume</span>
@@ -101,8 +102,8 @@ export default function Navbar({ onShareClick }) {
           <a
             href="#about"
             title="About Abhishek"
-            aria-label="About Abhishek"
-            className="w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-sky-500/50 transition-colors"
+            aria-label="Navigate to About section"
+            className="w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-sky-500/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
           >
             <User className="w-3.5 h-3.5" />
           </a>
@@ -110,8 +111,9 @@ export default function Navbar({ onShareClick }) {
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none"
-          aria-label="Toggle navigation menu"
+          className="lg:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -125,7 +127,7 @@ export default function Navbar({ onShareClick }) {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 hover:bg-slate-800/40 rounded-lg transition-colors"
+                className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 hover:bg-slate-800/40 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 {link.label}
               </a>
@@ -138,27 +140,28 @@ export default function Navbar({ onShareClick }) {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-                className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
+                aria-label="Abhishek Pachori's GitHub profile (opens in new tab)"
+                className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 <Code className="w-4 h-4" />
               </a>
               <button
                 onClick={handleCopyLink}
-                aria-label="Share portfolio"
-                className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
+                aria-label={hasCopied ? "Portfolio link copied to clipboard" : "Share portfolio link"}
+                className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
               >
                 {hasCopied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
               </button>
             </div>
 
             <a
-              href="/resume.pdf"
+              href={personalInfo.resumeUrl}
               download="Abhishek_Pachori_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-full"
+              aria-label="Download Abhishek Pachori's Resume (PDF)"
+              className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Resume</span>

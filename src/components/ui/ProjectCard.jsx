@@ -2,21 +2,18 @@ import React from 'react';
 import { ExternalLink, Search, CheckCircle } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
-/**
- * Modular ProjectCard component rendering sub-projects and portfolio applications.
- */
 export default function ProjectCard({ project }) {
   if (!project) return null;
 
   return (
-    <div className="bg-[#0d1424]/85 border border-zinc-800/80 hover:border-blue-500/40 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-blue-500/10 group">
+    <article className="bg-[#0d1424]/85 border border-zinc-800/80 hover:border-blue-500/40 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-blue-500/10 group">
       <div>
         <div className="flex items-center justify-between mb-4">
           <span className="bg-[#141f36] text-sky-300 border border-sky-500/20 text-[11px] font-mono font-medium px-2.5 py-1 rounded-md">
             {project.badge}
           </span>
           <span className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" aria-hidden="true" />
             <span>Active</span>
           </span>
         </div>
@@ -29,7 +26,7 @@ export default function ProjectCard({ project }) {
         </p>
 
         {project.type === 'notes-search' && project.mockSearch && (
-          <div className="bg-[#090e1a] border border-slate-800 rounded-xl p-3.5 mb-5 font-mono text-xs">
+          <div className="bg-[#090e1a] border border-slate-800 rounded-xl p-3.5 mb-5 font-mono text-xs" aria-hidden="true">
             <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/70 pb-2 mb-2.5">
               <span className="flex items-center gap-1.5 text-sky-400">
                 <Search className="w-3 h-3" />
@@ -49,7 +46,7 @@ export default function ProjectCard({ project }) {
         )}
 
         {project.type === 'candidate-pipeline' && project.mockCandidate && (
-          <div className="bg-[#090e1a] border border-slate-800 rounded-xl p-3.5 mb-5 font-mono text-xs">
+          <div className="bg-[#090e1a] border border-slate-800 rounded-xl p-3.5 mb-5 font-mono text-xs" aria-hidden="true">
             <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/70 pb-2 mb-2.5">
               <span className="text-slate-400 uppercase tracking-wider font-semibold">
                 {project.mockCandidate.label}
@@ -63,7 +60,7 @@ export default function ProjectCard({ project }) {
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-2 mb-6" aria-label="Tech stack">
           {project.stack.map((item, idx) => (
             <span
               key={idx}
@@ -80,8 +77,8 @@ export default function ProjectCard({ project }) {
           href={project.liveDemo}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Open live demo for ${project.title}`}
-          className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs py-2.5 rounded-lg flex items-center justify-center gap-2 shadow-sm shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-200"
+          aria-label={`Launch live demo for ${project.title} (opens in new tab)`}
+          className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs py-2.5 rounded-lg flex items-center justify-center gap-2 shadow-sm shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
         >
           <ExternalLink className="w-3.5 h-3.5" />
           <span>Live Demo</span>
@@ -91,13 +88,13 @@ export default function ProjectCard({ project }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`View GitHub repository for ${project.title}`}
-          className="flex-1 bg-[#11192b] hover:bg-[#18233c] hover:border-slate-600 text-slate-200 border border-slate-700/80 font-medium text-xs py-2.5 rounded-lg flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all duration-200"
+          aria-label={`View source code for ${project.title} on GitHub (opens in new tab)`}
+          className="flex-1 bg-[#11192b] hover:bg-[#18233c] hover:border-slate-600 text-slate-200 border border-slate-700/80 font-medium text-xs py-2.5 rounded-lg flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
         >
           <GithubIcon className="w-3.5 h-3.5 text-slate-400" />
           <span>GitHub Repo</span>
         </a>
       </div>
-    </div>
+    </article>
   );
 }

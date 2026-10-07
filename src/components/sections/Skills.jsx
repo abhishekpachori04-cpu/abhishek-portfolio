@@ -27,7 +27,7 @@ export default function Skills() {
         
         <SectionHeader
           title="Skills & Technologies"
-          subtitle="Core technical proficiencies, frameworks, and modern developer tooling leveraged to architect scalable, high-performance web applications."
+          subtitle="Core technical proficiencies, frameworks, and developer tooling leveraged to architect scalable, high-performance web applications."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
@@ -39,12 +39,12 @@ export default function Skills() {
                 : 'md:col-span-2 lg:col-span-3';
 
             return (
-              <div
+              <article
                 key={idx}
                 className={`bg-[#0d1424]/85 border border-slate-800/90 hover:border-blue-500/30 hover:bg-zinc-900/60 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-blue-500/10 group ${colSpanClass}`}
               >
                 <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-slate-800/60">
-                  <div className="p-2 rounded-xl bg-[#142036] border border-sky-500/20 group-hover:border-sky-400/40 group-hover:bg-sky-950/60 transition-all duration-300">
+                  <div className="p-2 rounded-xl bg-[#142036] border border-sky-500/20 group-hover:border-sky-400/40 group-hover:bg-sky-950/60 transition-all duration-300" aria-hidden="true">
                     {getCategoryIcon(group.icon)}
                   </div>
                   <h3 className="text-base font-bold text-white tracking-tight group-hover:text-sky-300 transition-colors duration-200">
@@ -52,7 +52,7 @@ export default function Skills() {
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" aria-label={`${group.category} skills`}>
                   {group.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
@@ -66,7 +66,7 @@ export default function Skills() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>

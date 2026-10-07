@@ -19,12 +19,12 @@ export const certificatesData = [
   {
     id: "cert-msft-ai-concepts",
     title: "AI Concepts for Developers and Technology Professionals",
-    issuer: "MICROSOFT",
+    issuer: "Microsoft",
     year: "2026",
     credentialId: "4CR5SAYK",
     credentialUrl: "https://learn.microsoft.com/api/achievements/share/en-us/AbhishekPachori-7789/4CR5SAYK?sharingId=C38D468E8F5CAD65",
     image: microsoftAiImg,
-    skills: ["Prompt engineering", "AI fundamentals", "generative AI"]
+    skills: ["Prompt Engineering", "AI Fundamentals", "Generative AI"]
   },
   {
     id: "cert-google-genai",
@@ -34,7 +34,7 @@ export const certificatesData = [
     credentialId: "27384708",
     credentialUrl: "https://www.skills.google/public_profiles/2b6983e2-dac1-4489-af2b-d44219664cad/badges/27384708?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
     image: googleCloudAiImg,
-    skills: ["Generative AI", "AI Fundamental's", "Prompt Engineering"]
+    skills: ["Generative AI", "AI Fundamentals", "Prompt Engineering"]
   },
   {
     id: "cert-cisco-python-2",
@@ -64,7 +64,7 @@ export const certificatesData = [
     credentialId: "6a9d334292075b8d740c3b02",
     credentialUrl: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_6a9828ba2e6a2126b5ea65a9_1788690229719_completion_certificate.pdf",
     image: deloitteJobSimImg,
-    skills: ["Web3 Architecture", "Smart Contracts", "Decentralized Systems"]
+    skills: ["Software Engineering", "Architecture Design", "System Delivery"]
   },
   {
     id: "cert-meta-react",
@@ -73,7 +73,7 @@ export const certificatesData = [
     year: "2024",
     credentialId: "",
     credentialUrl: "https://github.com/abhishekpachori04-cpu",
-    image: null, // Gracefully demonstrates elegant fallback thumbnail
+    image: null,
     skills: ["React", "JavaScript (ES6+)", "Component Architecture", "Hooks & State"]
   }
 ];
