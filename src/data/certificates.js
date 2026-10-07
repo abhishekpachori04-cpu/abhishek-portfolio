@@ -4,8 +4,21 @@ import microsoftAiImg from '../assets/certificates/microsoft-ai-concepts.png';
 import googleCloudAiImg from '../assets/certificates/google-cloud-generative-ai.png';
 import awsGenAiImg from '../assets/certificates/aws-genai-foundations.png';
 import deloitteJobSimImg from '../assets/certificates/deloitte-technology-job-simulation.png';
+import commBankJobSimImg from '../assets/certificates/commonwealth-bank-job-simulation.png';
 
 export const certificatesData = [
+  {
+    id: "cert-cba-job-sim",
+    title: "Introduction to Software Engineering Job Simulation",
+    issuer: "Forage (Commonwealth Bank)",
+    year: "2026",
+    date: "September 13th, 2026",
+    credentialId: "6aa68b31166082799da8015c",
+    credentialUrl: "https://www.theforage.com/simulations/commonwealth-bank/software-engineering",
+    image: commBankJobSimImg,
+    description: "Completed practical tasks involving website creation, modern stylization, financial cybersecurity concepts, and writing technical web hosting proposals.",
+    skills: ["Website Creation", "Stylization & CSS", "Financial Cybersecurity", "Web Hosting Proposals"]
+  },
   {
     id: "cert-cisco-python-1",
     title: "Python Essentials 1",

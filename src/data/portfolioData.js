@@ -112,6 +112,18 @@ export const skillsData = [
   }
 ];
 
+export const experienceData = [
+  {
+    id: "exp-inamigos",
+    role: "AI Prompt Engineering Intern",
+    company: "InAmigos Foundation",
+    duration: "September 2026 (Two Weeks)",
+    type: "Remote Internship",
+    description: "Completed a remote internship focused on AI prompt engineering. Actively participated in team meetings, collaborated on technical tasks, and contributed to organizational initiatives.",
+    tags: ["Generative AI", "Prompt Engineering", "Remote Collaboration"]
+  }
+];
+
 export const projectsData = [
   {
     id: "ai-buddy",
@@ -203,6 +215,7 @@ export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Journey', href: '#journey' },
   { label: 'Education', href: '#education' },
@@ -229,6 +242,15 @@ export const educationData = {
 export { certificatesData } from './certificates';
 
 export const achievementsData = [
+  {
+    id: "ach-cba-sim",
+    title: "Introduction to Software Engineering Job Simulation",
+    organization: "Forage (Commonwealth Bank)",
+    date: "September 13th, 2026",
+    badge: "Engineering Simulation",
+    footer: "Verified Completion",
+    description: "Completed practical tasks involving website creation, modern stylization, financial cybersecurity concepts, and writing technical web hosting proposals."
+  },
   {
     id: "ach-1",
     title: "AI Hackathon Prototyping",
