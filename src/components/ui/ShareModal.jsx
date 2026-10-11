@@ -45,13 +45,13 @@ export default function ShareModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="share-modal-title"
-        className="bg-[#0e1628] border border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl shadow-black/80 relative"
+        className="bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-2xl max-w-md w-full p-6 shadow-2xl shadow-black/80 relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
           aria-label="Close share dialog"
-          className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
+          className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-zinc-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
@@ -66,7 +66,7 @@ export default function ShareModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        <div className="bg-[#080d17] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2 mb-4">
+        <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-2.5 flex items-center justify-between gap-2 mb-4">
           <span className="text-xs font-mono text-slate-300 truncate px-1 select-all">
             {currentUrl}
           </span>
@@ -84,7 +84,7 @@ export default function ShareModal({ isOpen, onClose }) {
           <button
             onClick={shareToLinkedIn}
             aria-label="Share portfolio on LinkedIn (opens in new window)"
-            className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#111c30] border border-slate-800 hover:border-slate-700 text-slate-200 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
+            className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/60 hover:border-zinc-600 text-slate-200 text-xs font-medium transition-all hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
           >
             <LinkedinIcon className="w-4 h-4 text-sky-400" />
             <span>LinkedIn</span>
@@ -93,7 +93,7 @@ export default function ShareModal({ isOpen, onClose }) {
           <button
             onClick={shareToTwitter}
             aria-label="Share portfolio on X (opens in new window)"
-            className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#111c30] border border-slate-800 hover:border-slate-700 text-slate-200 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
+            className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/60 hover:border-zinc-600 text-slate-200 text-xs font-medium transition-all hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer"
           >
             <TwitterIcon className="w-4 h-4 text-sky-400" />
             <span>X (Twitter)</span>

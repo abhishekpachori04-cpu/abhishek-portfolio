@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, ShieldCheck, Award } from 'lucide-react';
+import SpotlightCard from './SpotlightCard';
 
 export default function CertificateCard({ cert }) {
   const [imgError, setImgError] = useState(false);
@@ -7,9 +8,14 @@ export default function CertificateCard({ cert }) {
   if (!cert) return null;
 
   return (
-    <article className="w-[320px] md:w-[350px] shrink-0 snap-start bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 group backdrop-blur-sm select-none">
+    <SpotlightCard
+      as="article"
+      enableTilt={true}
+      tiltMax={6}
+      className="w-[320px] md:w-[350px] shrink-0 snap-start p-5 flex flex-col justify-between transition-all duration-300 shadow-xl shadow-black/20 group hover:-translate-y-1 select-none"
+    >
       <div>
-        <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-zinc-800/50 border border-zinc-700/40 mb-4 flex items-center justify-center p-3 shadow-inner">
+        <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-zinc-950/80 border border-zinc-800/80 mb-4 flex items-center justify-center p-3 shadow-inner">
           {imgError || !cert.image ? (
             <div className="w-full h-full rounded-lg bg-gradient-to-br from-blue-950/60 via-zinc-900 to-sky-950/50 border border-sky-500/20 flex flex-col items-center justify-center gap-1.5 p-3 text-center">
               <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 shadow-inner group-hover:scale-110 transition-transform">
@@ -55,7 +61,7 @@ export default function CertificateCard({ cert }) {
           {cert.skills.map((skill, idx) => (
             <span
               key={idx}
-              className="bg-zinc-950/70 border border-zinc-800/90 text-slate-300 text-[11px] font-mono px-2.5 py-1 rounded-md"
+              className="bg-zinc-950/70 border border-zinc-800/90 text-slate-300 text-[11px] font-mono px-2.5 py-1 rounded-md hover:border-zinc-700 transition-colors"
             >
               {skill}
             </span>
@@ -75,6 +81,6 @@ export default function CertificateCard({ cert }) {
           <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
         </a>
       </div>
-    </article>
+    </SpotlightCard>
   );
 }

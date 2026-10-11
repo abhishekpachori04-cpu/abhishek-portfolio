@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 import CertificateCard from '../ui/CertificateCard';
 import { certificatesData } from '../../data/portfolioData';
+import { itemFadeUp, staggerContainer } from '../../utils/animations';
 
 export default function Certificates() {
   const sliderRef = useRef(null);
@@ -14,7 +16,14 @@ export default function Certificates() {
   };
 
   return (
-    <section id="certificates" className="py-20 border-t border-slate-800/60 relative scroll-mt-16 overflow-hidden">
+    <motion.section 
+      id="certificates" 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={staggerContainer}
+      className="py-20 border-t border-zinc-800/60 relative scroll-mt-16 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeader
@@ -24,7 +33,7 @@ export default function Certificates() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => scroll('left')}
-                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                 title="Previous certificates"
                 aria-label="Scroll certificates left"
               >
@@ -32,7 +41,7 @@ export default function Certificates() {
               </button>
               <button
                 onClick={() => scroll('right')}
-                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 text-slate-300 hover:text-white hover:border-blue-500/40 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                 title="Next certificates"
                 aria-label="Scroll certificates right"
               >
@@ -42,7 +51,8 @@ export default function Certificates() {
           }
         />
 
-        <div
+        <motion.div
+          variants={itemFadeUp}
           ref={sliderRef}
           role="region"
           aria-label="Certificates and credentials list"
@@ -52,9 +62,9 @@ export default function Certificates() {
           {certificatesData.map((cert) => (
             <CertificateCard key={cert.id} cert={cert} />
           ))}
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

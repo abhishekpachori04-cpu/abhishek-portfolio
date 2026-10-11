@@ -9,11 +9,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#060910] border-t border-slate-900 py-12 text-slate-400 text-xs">
+    <footer className="bg-zinc-950/90 border-t border-zinc-900/80 py-12 text-slate-400 text-xs relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-[#111c30] border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-sm">
+            <div className="w-7 h-7 rounded-lg bg-zinc-900 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-sm">
               {personalInfo.avatarText}
             </div>
             <div>
@@ -63,7 +63,7 @@ export default function Footer() {
             </span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-[#101726] border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-all hover:scale-105 active:scale-95 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               title="Back to Top"
               aria-label="Scroll back to top of page"
             >

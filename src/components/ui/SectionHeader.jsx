@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { customEase } from '../../utils/animations';
 
 export default function SectionHeader({
   title,
@@ -11,7 +13,11 @@ export default function SectionHeader({
   const isCenter = align === 'center';
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: customEase }}
       className={`mb-12 ${
         isCenter
           ? 'text-center max-w-2xl mx-auto'
@@ -29,7 +35,7 @@ export default function SectionHeader({
 
         <h2 className={`text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3 ${isCenter ? 'justify-center' : ''}`}>
           <span>{title}</span>
-          <span className="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-md shadow-sky-400/80 animate-pulse" aria-hidden="true" />
+          <span className="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-lg shadow-sky-400/80 animate-pulse" aria-hidden="true" />
         </h2>
 
         {subtitle && (
@@ -44,6 +50,6 @@ export default function SectionHeader({
           {rightAction}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

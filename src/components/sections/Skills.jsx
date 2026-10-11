@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Layout, 
   Database, 
@@ -7,7 +8,10 @@ import {
   Wrench 
 } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
+import SpotlightCard from '../ui/SpotlightCard';
+import UnfoldSection from '../ui/UnfoldSection';
 import { skillsData } from '../../data/portfolioData';
+import { cardRevealVariant } from '../../utils/animations';
 
 export default function Skills() {
   const getCategoryIcon = (iconName) => {
@@ -22,7 +26,10 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 border-t border-slate-800/60 relative scroll-mt-16">
+    <UnfoldSection 
+      id="skills" 
+      className="py-20 border-t border-zinc-800/60 relative scroll-mt-16"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeader
@@ -39,39 +46,49 @@ export default function Skills() {
                 : 'md:col-span-2 lg:col-span-3';
 
             return (
-              <article
+              <motion.div
                 key={idx}
-                className={`bg-[#0d1424]/85 border border-slate-800/90 hover:border-blue-500/30 hover:bg-zinc-900/60 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-blue-500/10 group ${colSpanClass}`}
+                variants={cardRevealVariant}
+                className={colSpanClass}
               >
-                <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-slate-800/60">
-                  <div className="p-2 rounded-xl bg-[#142036] border border-sky-500/20 group-hover:border-sky-400/40 group-hover:bg-sky-950/60 transition-all duration-300" aria-hidden="true">
-                    {getCategoryIcon(group.icon)}
-                  </div>
-                  <h3 className="text-base font-bold text-white tracking-tight group-hover:text-sky-300 transition-colors duration-200">
-                    {group.category}
-                  </h3>
-                </div>
+                <SpotlightCard
+                  as="article"
+                  enableTilt={true}
+                  tiltMax={5}
+                  className="p-5 sm:p-6 transition-all duration-300 shadow-xl shadow-black/20 group hover:-translate-y-1 h-full"
+                >
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-zinc-800/70">
+                      <div className="p-2 rounded-xl bg-zinc-800/80 border border-sky-500/20 group-hover:border-sky-400/40 group-hover:bg-sky-950/60 transition-all duration-300" aria-hidden="true">
+                        {getCategoryIcon(group.icon)}
+                      </div>
+                      <h3 className="text-base font-bold text-white tracking-tight group-hover:text-sky-300 transition-colors duration-200">
+                        {group.category}
+                      </h3>
+                    </div>
 
-                <div className="flex flex-wrap gap-2" aria-label={`${group.category} skills`}>
-                  {group.skills.map((skill, sIdx) => (
-                    <span
-                      key={sIdx}
-                      className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-all duration-200 ${
-                        skill.highlighted
-                          ? 'bg-blue-600/20 border-blue-500/40 text-sky-200 font-semibold shadow-sm shadow-blue-500/20'
-                          : 'bg-[#10192b] border-slate-800/80 text-slate-300 hover:border-slate-700 hover:text-white'
-                      }`}
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
-                </div>
-              </article>
+                    <div className="flex flex-wrap gap-2" aria-label={`${group.category} skills`}>
+                      {group.skills.map((skill, sIdx) => (
+                        <span
+                          key={sIdx}
+                          className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-all duration-200 ${
+                            skill.highlighted
+                              ? 'bg-blue-600/20 border-blue-500/40 text-sky-200 font-semibold shadow-sm shadow-blue-500/20 hover:border-blue-400/60'
+                              : 'bg-zinc-900/80 border-zinc-800/90 text-slate-300 hover:border-zinc-700 hover:text-white hover:bg-zinc-800/50'
+                          }`}
+                        >
+                          {skill.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </SpotlightCard>
+              </motion.div>
             );
           })}
         </div>
 
       </div>
-    </section>
+    </UnfoldSection>
   );
 }
